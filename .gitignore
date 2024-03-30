@@ -1,0 +1,33 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment
+.env
+
+# Project logs
+*.log
+
+# Local development settings
+instance/
+
+# IDE/Editor specific files
+.idea/
+.vscode/
+
+# Compiled Python files
+*.pyc
+*.pyo
+*.pyd
+
+# Dependency directories
+venv/
+env/
+
+# Flask specific
+*.pyc
+*.pyo
+*.db
+*.sqlite
+venv
