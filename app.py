@@ -35,7 +35,6 @@ def upload_file():
         if file:
             file_content = file.stream.read().decode("utf-8")
             json_data = csv_to_json(file_content)
-            print(json_data)
             return render_template('result.html', json_data=json_data)
 
     return render_template('index.html')
