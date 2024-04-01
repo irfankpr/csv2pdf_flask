@@ -30,7 +30,7 @@
                             <tr class="text-center"> <th class="col-1">SL</th> <th>Item</th> <th class="col-1">Qty</th> </tr>
                             
                             {% for item in order %}
-                            <tr> <td class="col-1 text-center col-1">{{ loop.index }}</td> <td class="col-10">{{ item['Item'] }}</td> <td class="text-center col-1">2</td> </tr>
+                            <tr> <td class="col-1 text-center col-1">{{ loop.index }}</td> <td class="col-10">{{ item['Item'] }}</td> <td class="text-center col-1">{{ item['Qty'] }}</td> </tr>
                             {% endfor %}
                             
                             
