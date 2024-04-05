@@ -23,21 +23,24 @@ def csv_to_json(csv_string, encoding='utf-8'):
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
-    if request.method == 'POST':
-        if 'file' not in request.files:
-            return render_template('index.html', error='No file part')
+    try:
+        if request.method == 'POST':
+            if 'file' not in request.files:
+                return render_template('index.html', message='No file part')
 
-        file = request.files['file']
+            file = request.files['file']
 
-        if file.filename == '':
-            return render_template('index.html', error='No selected file')
+            if file.filename == '':
+                return render_template('index.html', message='No selected file')
 
-        if file:
-            file_content = file.stream.read().decode("utf-8")
-            json_data = csv_to_json(file_content)
-            return render_template('result.html', json_data=json_data)
+            if file:
+                file_content = file.stream.read().decode("utf-8")
+                json_data = csv_to_json(file_content)
+                return render_template('result.html', json_data=json_data)
 
-    return render_template('index.html')
+        return render_template('index.html')
+    except Exception:
+        return render_template('index.html',message="Please try again")
 
 
 
